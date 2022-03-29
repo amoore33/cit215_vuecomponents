@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Components</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" name="name" id="name" v-model="name" placeholder="Name">
+    <input type="email" name="email" id="email" v-model="email" placeholder="E-mail address">
+    <div>{{ message }}</div>
+    <div>{{ submitted ? "Submitted" : "Not Submitted" }}</div>
+    <div v-for="codename in codenames" v-on:click="codename.clicked = !codename.clicked">
+        <span v-if="!codename.clicked">{{ codename.name }}</span>
+        <span v-else>{{ codename.codename }}</span>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
